@@ -76,8 +76,114 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  const x = queen.x - king.x;
+  const y = queen.y - king.y;
+  let queenX = queen.x;
+  let queenY = queen.y;
+  let res = false;
+
+  if (x < 0 && y < 0) {
+    const lim = 8 - queen.x;
+    for (let i = 0; i < lim; i += 1) {
+      queenX += 1;
+      queenY += 1;
+
+      if (queenX === king.x && queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x < 0 && y === 0) {
+    const lim = 8 - queen.x;
+    for (let i = 0; i < lim; i += 1) {
+      queenX += 1;
+
+      if (queenX === king.x) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x < 0 && y > 0) {
+    const lim = 8 - queen.x;
+    for (let i = 0; i < lim; i += 1) {
+      queenX += 1;
+      queenY -= 1;
+
+      if (queenX === king.x && queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x === 0 && y > 0) {
+    const lim = 8 - queen.y;
+    for (let i = 0; i < lim; i += 1) {
+      queenY -= 1;
+
+      if (queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x > 0 && y > 0) {
+    const lim = 8 - queen.x;
+    for (let i = 0; i < lim; i += 1) {
+      queenX -= 1;
+      queenY -= 1;
+
+      if (queenX === king.x && queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x > 0 && y === 0) {
+    const lim = 8 - queen.x;
+    for (let i = 0; i < lim; i += 1) {
+      queenX -= 1;
+
+      if (queenX === king.x && queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x > 0 && y < 0) {
+    const lim = 8 - queen.y;
+    for (let i = 0; i < lim; i += 1) {
+      queenX -= 1;
+      queenY += 1;
+
+      if (queenX === king.x && queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  if (x === 0 && y < 0) {
+    const lim = 8 - queen.y;
+    for (let i = 0; i < lim; i += 1) {
+      queenY += 1;
+
+      if (queenY === king.y) {
+        res = true;
+        break;
+      }
+    }
+  }
+
+  return res;
 }
 
 /**
@@ -98,31 +204,32 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(a, b, c) {
-  let res = false;
-  if (a === 0 || b === 0 || c === 0) {
-    res = false;
-  } else if (a === b) {
-    if (a + b > c) {
-      res = true;
-    } else {
-      res = false;
-    }
-  } else if (a === c) {
-    if (a + c > b) {
-      res = true;
-    } else {
-      res = false;
-    }
-  } else if (b === c) {
-    if (b + c > a) {
-      res = true;
-    } else {
-      res = false;
-    }
-  }
+function isIsoscelesTriangle(/* a, b, c */) {
+  throw new Error('Not implemented');
+  // let res = false;
+  // if (a === 0 || b === 0 || c === 0) {
+  //   res = false;
+  // } else if (a === b) {
+  //   if (a + b > c) {
+  //     res = true;
+  //   } else {
+  //     res = false;
+  //   }
+  // } else if (a === c) {
+  //   if (a + c > b) {
+  //     res = true;
+  //   } else {
+  //     res = false;
+  //   }
+  // } else if (b === c) {
+  //   if (b + c > a) {
+  //     res = true;
+  //   } else {
+  //     res = false;
+  //   }
+  // }
 
-  return res;
+  // return res;
 }
 
 /**
