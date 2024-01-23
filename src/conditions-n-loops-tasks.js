@@ -204,32 +204,31 @@ function canQueenCaptureKing(queen, king) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
-  // let res = false;
-  // if (a === 0 || b === 0 || c === 0) {
-  //   res = false;
-  // } else if (a === b) {
-  //   if (a + b > c) {
-  //     res = true;
-  //   } else {
-  //     res = false;
-  //   }
-  // } else if (a === c) {
-  //   if (a + c > b) {
-  //     res = true;
-  //   } else {
-  //     res = false;
-  //   }
-  // } else if (b === c) {
-  //   if (b + c > a) {
-  //     res = true;
-  //   } else {
-  //     res = false;
-  //   }
-  // }
+function isIsoscelesTriangle(a, b, c) {
+  let res = false;
+  if (a === 0 || b === 0 || c === 0) {
+    res = false;
+  } else if (a === b) {
+    if (a + b > c) {
+      res = true;
+    } else {
+      res = false;
+    }
+  } else if (a === c) {
+    if (a + c > b) {
+      res = true;
+    } else {
+      res = false;
+    }
+  } else if (b === c) {
+    if (b + c > a) {
+      res = true;
+    } else {
+      res = false;
+    }
+  }
 
-  // return res;
+  return res;
 }
 
 /**
